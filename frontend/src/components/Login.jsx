@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import BgImg from "../images/loginwallpaper.png";
+import BgImg from "../images/bg.jpg";
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -47,9 +47,11 @@ export default function Login() {
 
 
     return (
-        <>
-            <div className="bg-cover bg-center min-h-screen flex items-center justify-center" style={{backgroundImage: `url(${BgImg})`}}>
-                <div className="bg-white w-full max-w-md rounded-lg shadow-lg p-8">
+        <div className="min-h-screen flex bg-gradient-to-r from-blue-50 to-white">
+            {/* Left Side - Form */}
+            <div className="w-full md:w-1/3 p-10 flex items-center justify-center bg-white shadow-lg">
+                <div className="w-full max-w-md">
+                    <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Login</h2>
                     <form onSubmit={loginUser} className="space-y-6">
                         <div>
                             <input
@@ -80,6 +82,12 @@ export default function Login() {
                     </form>
                 </div>
             </div>
-        </>
-    )
+    
+            {/* Right Side - Background Image */}
+            <div className="hidden md:block md:w-2/3 bg-cover bg-center" style={{ backgroundImage: `url(${BgImg})` }}>
+                {/* Optional content inside the illustration area */}
+            </div>
+        </div>
+    );
+    
 }

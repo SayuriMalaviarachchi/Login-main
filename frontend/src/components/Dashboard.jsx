@@ -39,7 +39,7 @@ const Dashboard = () => {
 
     if (error) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="flex items-center justify-center min-h-screen bg-gray-200">
                 <p className="text-red-500 text-lg font-semibold">{error}</p>
             </div>
         );
@@ -47,25 +47,25 @@ const Dashboard = () => {
 
     if (!user) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
-                <p className="text-gray-500 text-lg font-semibold">Loading...</p>
+            <div className="flex items-center justify-center min-h-screen bg-gray-200">
+                <p className="text-gray-600 text-lg font-semibold">Loading...</p>
             </div>
         );
     }
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-950 to-purple-900">
-            <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-                <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">Welcome, {user.userName}</h1>
-                <div className="flex justify-center mb-4">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-600 to-gray-800">
+            <div className="bg-gray-700 shadow-xl rounded-3xl p-10 max-w-lg w-full transform hover:scale-105 transition-transform duration-300">
+                <h1 className="text-4xl font-extrabold text-gray-200 mb-6 text-center">Welcome, {user.userName}</h1>
+                <div className="flex justify-center mb-6">
                     {user.profilePicture && (
-                        <img src={user.profilePicture} alt="Profile" className="h-24 w-24 rounded-full border-4 border-blue-500" />
+                        <img src={user.profilePicture} alt="Profile" className="h-32 w-32 rounded-full border-4 border-gray-500 shadow-lg" />
                     )}
                 </div>
-                <p className="text-gray-700 text-lg text-center mb-6">Email: {user.email}</p>
+                <p className="text-gray-300 text-lg text-center mb-8">Email: {user.email}</p>
                 <button
                     onClick={handleLogout}
-                    className="w-full py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300"
+                    className="w-full py-3 bg-gray-500 text-white text-lg font-semibold rounded-xl hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400 transition duration-300"
                 >
                     Logout
                 </button>
